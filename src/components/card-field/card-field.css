@@ -1,0 +1,10 @@
+.card-field {
+  width: 50%;
+  height: 50%;
+  margin-left: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

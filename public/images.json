@@ -1,0 +1,42 @@
+[
+  {
+    "category": "/countries",
+    "images":[
+      "brazil.png",
+      "israel.png",
+      "jamaica.png",
+      "japan.png",
+      "united-kingdom.png",
+      "north-korea.png",
+      "tunisia.png",
+      "south-korea.png"
+    ]
+  },
+  {
+    "category": "/Pride",
+    "images":[
+      "couple.png",
+      "firework.png",
+      "lollipop.png",
+      "megaphone.png",
+      "parade.png",
+      "peace.png",
+      "pride.png",
+      "wedding-rings.png"
+    ]
+  },
+  {
+    "category": "/soc",
+    "images":[
+      "deviantart.png",
+      "disqus.png",
+      "telegram.png",
+      "vimeo.png",
+      "xing.png",
+      "whatsapp.png",
+      "twitter.png",
+      "instagram.png"
+    ]
+  }
+
+]
