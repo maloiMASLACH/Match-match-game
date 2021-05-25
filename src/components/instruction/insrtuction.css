@@ -1,0 +1,87 @@
+.instructions{
+  display: flex;
+  margin-top:2rem;
+  width: 50%;
+  height: 50%;
+  color: rgb(0, 0, 0);
+}
+.main-info-left{
+  display: inline;
+  justify-content: left;
+}
+.main-info-left h4{
+  margin-bottom:20px;
+}
+.main-info-left div{
+  display: flex;
+  width: 360px;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 16px;
+  box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24);
+}
+.main-info-left .how-point{
+  margin: 10px 0 0 10px;
+  height: 40px;
+  width: 40px;
+  background-color: rgb(103, 86, 116);
+  border-radius: 50%;
+  font-size: 24px;
+  padding-left: 12px;
+  padding-top: 5px;
+}
+ .how-register{
+ height: 230px;
+}
+.how-config{
+  height: 132px;
+}
+.how-start{
+  height: 240px;
+}
+.how-text{
+  font-size: 14px;
+  margin: 20px 0 0 10px;
+  width: 272px;
+}
+.main-info-right{
+  display: inline;
+}
+.main-info-right .register-instr{
+  margin: 44px 0 0 25%;
+  width: 302px;
+  height: 218px;
+}
+.main-info-right .game-set-instr{
+  margin: 16px 0 0 86%;
+  font-size: 13px;
+  font-weight: bolder;
+  height: 64px;
+  width: 100px;
+  background-color: rgb(110, 80, 122);
+}
+.main-info-right .game-set-instr:hover{
+  background-color: rgb(182, 143, 197) ;
+}
+.main-info-right .game-set-instr img{
+  border-radius: 50%;
+  position: absolute;
+  margin: 10px 0 0 40px;
+}
+.main-info-right .game-set-instr p{
+  padding-top: 40px;
+  padding-left: 5px;
+}
+.main-info-right .game-set-instr img.img-inside-img{
+  margin: 11px 0 0 42px;
+}
+.main-info-right .example{
+  width: 330px;
+  height: 240px;
+  margin: 95px 0 0 17%
+}
+table{
+  position: absolute;
+  top:80%;
+  display: flex;
+  width: 40%;
+}

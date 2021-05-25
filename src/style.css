@@ -5,7 +5,6 @@ body{
   color: #ccc;
   font-family: "Roboto", sans-serif;
   background-color: rgb(223, 211, 223);
-  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -40,11 +39,205 @@ h1,h2,h3,h4,h5,h6{
   margin: 0;
 }
 
+
 main {
-  min-height: calc(100vh - 2rem);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+header{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 64px;
+  background-color: rgb(110, 80, 122);
+}
+header .icons{
+  margin-left: 5%;
+  display:  inline;
+  justify-content: center;
+  align-items: center;
+}
+header .icons div{
+  padding-left: 5px;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  width: 80px;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+}
+header .icons div:last-child{
+background-color: antiquewhite;
+color: indigo;
+}
+.head-menu{
+  justify-content: center;
+  align-items:center;
+  display: flex;
+  margin-left: 5%;
+  color: white;
+}
+.head-menu div{
+  cursor: pointer;
+  height: 64px;
+margin-right: 0;
+width: 150px;
+}
+.head-menu div:hover{
+  background-color: rgb(182, 143, 197) ;
+}
+.head-menu div.active{
+ background-color: rgb(163, 102, 207);
+}
+.head-menu div img{
+  margin-top: 5px;
+  margin-left: 4.2%;
+ position: absolute;
+ border-radius: 50%;
+}
+.head-menu div img.img-inside-img{
+  margin-left: 4.4%;
+  margin-top: 7px;
+}
+.head-menu div p{
+  margin-left: 10%;
+  margin-top: 30px
+}
+.head-register-but{
+  margin-left: 30%;
+  width: 207px;
+  height: 36px;
+  border-radius: 5px;
+  background-color: rgb(214, 175, 241);
+  color: white;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.head-start-but{
+  margin-left: 30%;
+  width: 147px;
+  height: 36px;
+  border-radius: 5px;
+  background-color: rgb(214, 175, 241);
+  color: white;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.head-avatar{
+  margin-left: 2%;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.register-lay{
+  position: fixed;
+  top:0%;
+  left:0%;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+.register-content{
+  opacity: 1;
+  margin:10% 0 0 30%;
+  width:639px;
+  height: 460px;
+  background-color: rgb(255, 255, 255);
+  justify-content: center;
+  align-items: center;
+  border-radius: 5%;
+}
+.register-content h3{
+  display: block;
+  background-color: rgb(198, 160, 236);
+  padding:10px 0 10px 10px;
+  color: black;
+  font-size: 20px;
+}
+.register-form{
+  display: flex;
+}
+.register-form div{
+  width: 350px;
+}
+.form-left{
+  margin: 20px 0 0 20px;
+}
+.form-left input{
+  margin-top: 16px;
+  width: 328px;
+  height: 72px;
+  background-color: rgb(198, 160, 236);
+  border:1px solid indigo;
+  color: black;
+  font-size: 20px;
+  font-weight: bolder;
+  padding-left: 60px;
+  transition: 0.2s;
+}
+.form-left input:hover{
+  background-color: rgb(222, 193, 250);
+}
+.form-right{
+  margin:35px 0 0 35px;
+
+}
+.registration-avatar{
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 2;
+}
+.avatar-on-reg{
+width: 200px;
+height: 200px;
+position: absolute;
+border-radius: 50%;
+}
+button.add-user{
+  pointer-events: none;
+  opacity: 0;
+}
+.register-form-butt{
+margin:70px 0 0 370px;
+display: flex;
+width: 250px;
+justify-content: space-between;
+}
+
+.register-form-butt label{
+  padding: 10px 0 0 10px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10%;
+  height: 36px;
+  width: 108px;
+  font-size: 16px;
+  font-weight: bolder;
+  background-color: rgb(198, 160, 236);
+  color:black;
+  transition: 0.3s;
+}
+.register-form-butt label:hover{
+  transform: scale(1.05);
+}
+.register-form-butt button{
+  font-size: 16px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10%;
+  height: 36px;
+  width: 108px;
+  font-weight: bolder;
+  background-color: rgb(202, 202, 202);
+  color:rgb(156, 156, 156);
+  transition: 0.3s;
+}
+.register-form-butt button:hover{
+  transform: scale(1.05);
 }
 
 footer {

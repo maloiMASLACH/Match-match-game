@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+import { BaseComponent } from '../base-component';
+import './header.css'
 
-  <title>Document</title>
-</head>
-<body>
-  <header>
+export class Header extends BaseComponent{
+  constructor(){
+    super('header',['header']);
+  }
+
+  createHeader(){
+
+    const head = document.querySelector('body');
+    if(head){
+      head.innerHTML=`
+      <header>
     <div class="icons">
       <div>
         <p>match</p>
@@ -34,25 +36,41 @@
         <p>Game Settings</p>
       </div>
     </div>
-    <button class="head-start-but">
+    <div class="right-head">
+    <button class="head-register-but">
+      <p>
+        register new player
+      </p>
+    </button>
+    </div>
+  </header>
+      <main>
+
+      </main>
+      `
+    }
+
+
+
+  }
+
+
+  addUserHeader(){
+    const head = document.querySelector('.right-head');
+    if(head){
+      head.innerHTML=`
+      <button class="head-start-but">
       <p>
         start game
       </p>
     </button>
     <img class="head-avatar" src="https://sun9-46.userapi.com/impg/oL-wKdkN4BZ6HPaMtOT-eMBrTAlm_M314zlG2w/JA5b8BbGK-w.jpg?size=8x14&quality=96&sign=782155d8ab1347b91208a14aa78e2c80&type=album">
-  </header>
+
+      `
+    }
 
 
 
-  <footer> RS </footer>
+  }
 
-  <!--<div class="card-conteiner">
-    <div class="card">
-      <div class="card__front">Front</div>
-      <div class="card__back">Back</div>
-    </div>
-  -->
-  </div>
-  <script src="./script.js"></script>
-</body>
-</html>
+}

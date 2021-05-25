@@ -8,6 +8,7 @@ export class App {
     this.rootElement.appendChild(this.game.element)
   }
 
+
  async newGame() {
     const res = await fetch('./images.json');
     const categories: ImageCategoryModel[] = await res.json();
