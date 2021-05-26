@@ -13,7 +13,7 @@ export class App {
     const res = await fetch('./images.json');
     const categories: ImageCategoryModel[] = await res.json();
 
-    const cat = categories[/*Math.floor(Math.random() * (10 - 0 + 1)) + 0*/1];
+    const cat = categories[/*Math.floor(Math.random() * (10 - 0 + 1)) + 0*/3];
     const images = cat.images.map((name) => `${cat.category}/${name}`);
     this.game.initGame(images);
   }

@@ -1,0 +1,47 @@
+.best-score{
+  background-color: rgb(236, 209, 255);
+  margin-top:4rem;
+  width: 50%;
+  height: 50%;
+  margin-left: 0%;
+  border: solid 5px rgb(148, 94, 187) ;
+  border-radius: 3%;
+  pointer-events: none;
+}
+
+ul.wlist{
+  margin-left: 20%;
+  display: inline;
+  list-style: none;
+}
+.wlist li{
+  margin-bottom: 1rem;
+  display:flex ;
+  align-items: center;
+}
+.man-info{
+  width: 40%;
+  margin-left: 5%;
+  display: inline;
+}
+.name-and-surname{
+
+  display: flex;
+  color: rgb(115, 81, 138);
+
+}
+.surname{
+  margin-left: 3%;
+}
+.email{
+  color: rgb(155, 148, 161);
+  font-size: smaller;
+}
+.player-score{
+  position: absolute;
+  right: 30%;
+  color: indigo;
+
+}
+
+

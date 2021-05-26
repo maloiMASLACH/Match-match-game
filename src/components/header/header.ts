@@ -21,12 +21,12 @@ export class Header extends BaseComponent{
       </div>
     </div>
     <div class="head-menu">
-      <div class="active">
+      <div class="about-game-head active">
         <img src="https://sun9-59.userapi.com/impg/z8HetXoUEKYNuH-SCZn3BzHjnjU69OqSWo4EOA/VJprOVrjbD4.jpg?size=20x20&quality=96&sign=ac17c98e957477e710289d395d04e76d&type=album" alt="">
         <img class="img-inside-img" src="https://sun9-46.userapi.com/impg/oL-wKdkN4BZ6HPaMtOT-eMBrTAlm_M314zlG2w/JA5b8BbGK-w.jpg?size=8x14&quality=96&sign=782155d8ab1347b91208a14aa78e2c80&type=album" alt="">
         <p>About game</p>
       </div>
-      <div>
+      <div class="best-score-head">
         <img src="https://sun9-59.userapi.com/impg/z8HetXoUEKYNuH-SCZn3BzHjnjU69OqSWo4EOA/VJprOVrjbD4.jpg?size=20x20&quality=96&sign=ac17c98e957477e710289d395d04e76d&type=album" alt="">
         <p>Best Score</p>
       </div>
@@ -53,7 +53,6 @@ export class Header extends BaseComponent{
 
 
   }
-
 
   addUserHeader(){
     const head = document.querySelector('.right-head');

@@ -79,9 +79,3 @@
   height: 240px;
   margin: 95px 0 0 17%
 }
-table{
-  position: absolute;
-  top:80%;
-  display: flex;
-  width: 40%;
-}

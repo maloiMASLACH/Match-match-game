@@ -48,10 +48,4 @@ export class Register extends BaseComponent{
     }
   }
 
-
-
-
-
-
-
 }

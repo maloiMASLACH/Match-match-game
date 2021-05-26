@@ -7,6 +7,10 @@ export class Instruction extends BaseComponent{
   }
 
   startMain(){
+    const head=document.querySelectorAll(".head-menu div")
+    head.forEach(div => {div.classList.remove("active")
+    });
+    head[0].classList.add("active")
     const instr = document.querySelector('main')
     if (instr){
       instr.innerHTML=`
@@ -37,19 +41,6 @@ export class Instruction extends BaseComponent{
       <div class="example" style="background-image: url('https://sun9-18.userapi.com/impg/mFR4-MngKxxaGzctp6Z7Xg_CgJZgGPSRtuVWtw/lrnRjkM10KE.jpg?size=330x240&quality=96&sign=1678bbef03983bbb5c7ee78121487758&type=album');">
       </div>
     </div>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>f</th>
-          <th>l</th>
-          <th>e</th>
-        </tr>
-      </thead>
-      <tbody id="table">
-
-      </tbody>
-    </table>
   </div>
       `
     }
