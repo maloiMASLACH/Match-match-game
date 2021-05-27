@@ -1,8 +1,10 @@
 .card-field {
   margin-top:4rem;
-  width: 50%;
-  height: 50%;
-  margin-left: 20%;
+  min-width: 40ch;
+  max-width: 80ch;
+  min-height: 40vh;
+  max-height: 80vh;
+
   display: flex;
   align-items: center;
   justify-content: center;

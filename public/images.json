@@ -1,6 +1,6 @@
 [
   {
-    "category": "/countries",
+    "category": "/countries-HARD",
     "images":[
       "brazil.png",
       "israel.png",
@@ -13,7 +13,27 @@
     ]
   },
   {
-    "category": "/Pride",
+    "category": "/countries-MEDIUM",
+    "images":[
+      "brazil.png",
+      "israel.png",
+      "jamaica.png",
+      "japan.png",
+      "south-korea.png",
+      "north-korea.png"
+    ]
+  },
+  {
+    "category": "/countries-EASY",
+    "images":[
+      "brazil.png",
+      "israel.png",
+      "jamaica.png",
+      "japan.png"
+    ]
+  },
+  {
+    "category": "/Pride-HARD",
     "images":[
       "couple.png",
       "firework.png",
@@ -26,7 +46,27 @@
     ]
   },
   {
-    "category": "/soc",
+    "category": "/Pride-MEDIUM",
+    "images":[
+      "couple.png",
+      "firework.png",
+      "lollipop.png",
+      "megaphone.png",
+      "parade.png",
+      "peace.png"
+    ]
+  },
+  {
+    "category": "/Pride-EASY",
+    "images":[
+      "couple.png",
+      "firework.png",
+      "lollipop.png",
+      "megaphone.png"
+    ]
+  },
+  {
+    "category": "/soc-HARD",
     "images":[
       "deviantart.png",
       "disqus.png",
@@ -36,6 +76,39 @@
       "whatsapp.png",
       "twitter.png",
       "instagram.png"
+    ]
+  },
+  {
+    "category": "/soc-MEDIUM",
+    "images":[
+      "deviantart.png",
+      "disqus.png",
+      "instagram.png",
+      "telegram.png",
+      "twitter.png",
+      "vimeo.png"
+    ]
+  },
+  {
+    "category": "/soc-EASY",
+    "images":[
+      "deviantart.png",
+      "disqus.png",
+      "instagram.png",
+      "telegram.png"
+    ]
+  },
+  {
+    "category": "/food-HARD",
+    "images":[
+      "banana-bread.png",
+      "barbecue.png",
+      "borscht.png",
+      "burger-sandwich.png",
+      "chocolate-chip.png",
+      "hot-dog.png",
+      "onigiri.png",
+      "paella.png"
     ]
   }
 

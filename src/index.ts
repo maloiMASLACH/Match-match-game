@@ -5,6 +5,7 @@ import { Instruction } from './components/instruction/insrtuction';
 import { Register } from './components/register/register';
 import { DataBase } from './components/data-base/data-base'
 import { uid } from './keygen';
+import { GameSettings } from './components/game-settings/game-settngs';
 
 
 
@@ -30,17 +31,6 @@ document.querySelector('.head-register-but')?.addEventListener('click',() =>{
   const lastName:string =(<HTMLInputElement>document.getElementById("lastName")).value
   const eMail:string =(<HTMLInputElement>document.getElementById("eMail")).value
 
-/*  const database: DataBase =new DataBase()
- const table = document.getElementById("table")
-
-  table?.insertAdjacentHTML("beforeend",`
-    <tr>
-      <td>${database.id}</td>
-      <td>${database.firstName}</td>
-      <td>${database.lastName}</td>
-      <td>${database.eMail}</td>
-    </tr>
-  `)*/
   const player ={
     id: uid(),
     firstName,
@@ -50,11 +40,19 @@ document.querySelector('.head-register-but')?.addEventListener('click',() =>{
   new DataBase().init(player)
     new Header().addUserHeader()
 
-  document.querySelector(".head-start-but")?.addEventListener("click",()=>{
+   document.querySelector(".head-start-but")?.addEventListener("click",()=>{
+      if(document.querySelector(".game-settings")==null){
+      new Instruction().removeInstr();
+      new App(appElement).newGame();
+      }else{
+        let cardType= (<HTMLInputElement>document.getElementById("first-set"))?.value
+    let difficulty= (<HTMLInputElement>document.getElementById("thecond-set"))?.value
+    if (cardType && difficulty){
     new Instruction().removeInstr();
-    new App(appElement).newGame();
-
-    })
+    new App(appElement).newGameWithSet(cardType,difficulty);
+    }
+      }
+      })
 
   new Register().closeForm();
   })
@@ -64,11 +62,25 @@ document.querySelector(".best-score-head")?.addEventListener("click",(e)=>{
   new DataBase().createScorePage();
   new DataBase().showTable();
 })
+
 document.querySelector(".about-game-head")?.addEventListener("click",()=>{
   new Instruction().startMain();
-
 })
+document.querySelector(".game-setting-head")?.addEventListener("click",()=>{
 
+  new GameSettings().settingsMenu();
+  document.querySelector(".head-start-but")?.addEventListener("click",()=>{
+
+    let cardType= (<HTMLInputElement>document.getElementById("first-set"))?.value
+    let difficulty= (<HTMLInputElement>document.getElementById("thecond-set"))?.value
+    if (cardType && difficulty){
+    new Instruction().removeInstr();
+    new App(appElement).newGameWithSet(cardType,difficulty);
+    const time= new App(appElement).timer()
+    console.log(time.seconds)
+    }
+    })
+})
 };
 
 

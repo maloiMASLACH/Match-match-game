@@ -30,7 +30,7 @@ export class Header extends BaseComponent{
         <img src="https://sun9-59.userapi.com/impg/z8HetXoUEKYNuH-SCZn3BzHjnjU69OqSWo4EOA/VJprOVrjbD4.jpg?size=20x20&quality=96&sign=ac17c98e957477e710289d395d04e76d&type=album" alt="">
         <p>Best Score</p>
       </div>
-      <div>
+      <div class="game-setting-head">
         <img src="https://sun9-59.userapi.com/impg/z8HetXoUEKYNuH-SCZn3BzHjnjU69OqSWo4EOA/VJprOVrjbD4.jpg?size=20x20&quality=96&sign=ac17c98e957477e710289d395d04e76d&type=album" alt="">
         <img class="img-inside-img" src="https://sun9-45.userapi.com/impg/WjJk8iEOavUdmaMo7JPV0udSGs_vKFfOSkm6Aw/EVdOvMCEH8U.jpg?size=16x16&quality=96&sign=9152de591fbee65d701f0b690264f763&type=album" alt="">
         <p>Game Settings</p>
