@@ -22,9 +22,9 @@ export class Game extends BaseComponent {
     this.cardsField.clear();
 
     const cards = images
-    .concat(images)
-    .map((url) => new Card(url))
-    .sort(() => Math.random() - 0.5);
+      .concat(images)
+      .map((url) => new Card(url))
+      .sort(() => Math.random() - 0.5);
 
     cards.forEach((card) => {
       card.element.addEventListener('click', () => this.cardHandler(card));
@@ -45,15 +45,15 @@ export class Game extends BaseComponent {
     if (!this.activeCard) {
       this.activeCard = card;
       this.isAnimation = false;
-    return;
-  }
+      return;
+    }
 
-  if (this.activeCard.image !== card.image) {
-    await delay(FLIP_DELAY);
-    await Promise.all([this.activeCard.flipToBack(), card.flipToBack()]);
-  }
+    if (this.activeCard.image !== card.image) {
+      await delay(FLIP_DELAY);
+      await Promise.all([this.activeCard.flipToBack(), card.flipToBack()]);
+    }
 
-  this.activeCard = undefined;
-  this.isAnimation = false;
+    this.activeCard = undefined;
+    this.isAnimation = false;
   }
 }

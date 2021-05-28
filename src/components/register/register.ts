@@ -1,15 +1,15 @@
 import { BaseComponent } from '../base-component';
-import './register.css'
+import './register.css';
 
-export class Register extends BaseComponent{
-  constructor(){
-    super('div',['register-lay']);
+export class Register extends BaseComponent {
+  constructor() {
+    super('div', ['register-lay']);
   }
 
-  registerForm(){
+  registerForm = ():void => {
     const reg = document.querySelector('main');
-    if(reg){
-      reg.innerHTML+=`
+    if (reg) {
+      reg.innerHTML += `
       <div class="register-lay" id="register-lay">
     <div class="register-content">
       <h3>Register new Player</h3>
@@ -35,17 +35,14 @@ export class Register extends BaseComponent{
       </div>
     </div>
   </div>
-      `
+      `;
     }
+  };
 
-
-
-}
-  closeForm(){
+  closeForm = ():void => {
     const reg = document.querySelector('.register-lay');
-    if(reg){
+    if (reg) {
       reg.remove();
     }
-  }
-
+  };
 }

@@ -4,7 +4,7 @@ import { BaseComponent } from '../base-component';
 const FLIP_CLASS = 'flipped';
 
 export class Card extends BaseComponent {
-isFlipped = false;
+  isFlipped = false;
 
   constructor(readonly image: string) {
     super('div', ['card-container']);
@@ -14,23 +14,23 @@ isFlipped = false;
         <div class="card-back"></div>
      </div>
      `;
-    }
+  }
 
-  flipToBack() {
+  flipToBack():Promise<void> {
     this.isFlipped = true;
     return this.flip(true);
   }
 
-  flipToFront() {
+  flipToFront():Promise<void> {
     this.isFlipped = false;
     return this.flip();
   }
 
   private flip(isFront = false):Promise<void> {
-      return new Promise((resolve) => {
-        this.element.classList.toggle(FLIP_CLASS, isFront);
-        this.element.addEventListener('transitionend', () => resolve(), {
-     once: true,
+    return new Promise((resolve) => {
+      this.element.classList.toggle(FLIP_CLASS, isFront);
+      this.element.addEventListener('transitionend', () => resolve(), {
+        once: true,
       });
     });
   }

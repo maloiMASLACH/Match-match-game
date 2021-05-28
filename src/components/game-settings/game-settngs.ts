@@ -1,18 +1,20 @@
 import { BaseComponent } from '../base-component';
-import './game-settings.css'
+import './game-settings.css';
 
-export class GameSettings extends BaseComponent{
- constructor(){
-  super('main',['data-base']);
-}
-  settingsMenu(){
-    const head=document.querySelectorAll(".head-menu div")
-    head.forEach(div => {div.classList.remove("active")
+export class GameSettings extends BaseComponent {
+  constructor() {
+    super('main', ['data-base']);
+  }
+
+  settingsMenu = ():void => {
+    const head = document.querySelectorAll('.head-menu div');
+    head.forEach((div) => {
+      div.classList.remove('active');
     });
-    head[2].classList.add("active")
-    const block = document.querySelector("main")
-    if(block)
-    block.innerHTML=`
+    head[2].classList.add('active');
+    const block = document.querySelector('main');
+    if (block) {
+      block.innerHTML = `
     <div class="game-settings">
     <fieldset class="game-parammetr">
       <legend>Game Cards</legend>
@@ -32,6 +34,7 @@ export class GameSettings extends BaseComponent{
       </select>
     </fieldset>
   </div>
-    `
-  }
+    `;
+    }
+  };
 }

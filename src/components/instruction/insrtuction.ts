@@ -1,19 +1,20 @@
 import { BaseComponent } from '../base-component';
-import './insrtuction.css'
+import './insrtuction.css';
 
-export class Instruction extends BaseComponent{
-  constructor(){
-    super('main',['instructions']);
+export class Instruction extends BaseComponent {
+  constructor() {
+    super('main', ['instructions']);
   }
 
-  startMain(){
-    const head=document.querySelectorAll(".head-menu div")
-    head.forEach(div => {div.classList.remove("active")
+  startMain = ():void => {
+    const head = document.querySelectorAll('.head-menu div');
+    head.forEach((div) => {
+      div.classList.remove('active');
     });
-    head[0].classList.add("active")
-    const instr = document.querySelector('main')
-    if (instr){
-      instr.innerHTML=`
+    head[0].classList.add('active');
+    const instr = document.querySelector('main');
+    if (instr) {
+      instr.innerHTML = `
     <div class="instructions">
       <div class="main-info-left">
        <h4>How to play?</h4>
@@ -42,15 +43,16 @@ export class Instruction extends BaseComponent{
       </div>
     </div>
   </div>
-      `
+      `;
     }
-  }
-  removeInstr(){
-    const instr = document.querySelectorAll('main div')
-    if (instr){
-      instr.forEach(div => {
-        div.remove()
+  };
+
+  removeInstr = ():void => {
+    const instr = document.querySelectorAll('main div');
+    if (instr) {
+      instr.forEach((div) => {
+        div.remove();
       });
     }
-  }
+  };
 }

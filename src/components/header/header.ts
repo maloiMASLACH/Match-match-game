@@ -1,16 +1,15 @@
 import { BaseComponent } from '../base-component';
-import './header.css'
+import './header.css';
 
-export class Header extends BaseComponent{
-  constructor(){
-    super('header',['header']);
+export class Header extends BaseComponent {
+  constructor() {
+    super('header', ['header']);
   }
 
-  createHeader(){
-
+  createHeader = ():void => {
     const head = document.querySelector('body');
-    if(head){
-      head.innerHTML=`
+    if (head) {
+      head.innerHTML = `
       <header>
     <div class="icons">
       <div>
@@ -47,17 +46,14 @@ export class Header extends BaseComponent{
       <main>
 
       </main>
-      `
+      `;
     }
+  };
 
-
-
-  }
-
-  addUserHeader(){
+  addUserHeader = ():void => {
     const head = document.querySelector('.right-head');
-    if(head){
-      head.innerHTML=`
+    if (head) {
+      head.innerHTML = `
       <button class="head-start-but">
       <p>
         start game
@@ -65,11 +61,7 @@ export class Header extends BaseComponent{
     </button>
     <img class="head-avatar" src="https://sun9-46.userapi.com/impg/oL-wKdkN4BZ6HPaMtOT-eMBrTAlm_M314zlG2w/JA5b8BbGK-w.jpg?size=8x14&quality=96&sign=782155d8ab1347b91208a14aa78e2c80&type=album">
 
-      `
+      `;
     }
-
-
-
-  }
-
+  };
 }
