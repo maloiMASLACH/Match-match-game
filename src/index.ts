@@ -37,6 +37,40 @@ window.onload = () => {
         eMail,
         score,
       };
+      /* function init() {
+        let db:IDBDatabase;
+        let dbObgect = null;
+        const crDb = indexedDB.open('maloiMASLACH', 2);
+        function makeTX(storeName:string, mode:IDBTransactionMode):IDBTransaction {
+          const tx = db.transaction(storeName, mode);
+          return tx;
+        }
+        crDb.onerror = function ():void {
+          console.log('err1');
+        };
+        crDb.onsuccess = function ():void {
+          console.log('success', db);
+          db = crDb.result;
+          const tx = makeTX('scoreTable', 'readwrite');
+          tx.oncomplete = () => {
+          };
+          const store = tx.objectStore('scoreTable');
+          const request = store.add(player);
+        };
+        crDb.onupgradeneeded = (ev) => {
+          db = crDb.result;
+          const oVersion = ev.oldVersion;
+          const nVersion = ev.newVersion;
+          console.log(`updated from ${oVersion} to ${nVersion} version`);
+          if (!db.objectStoreNames.contains('scoreTable')) {
+            dbObgect = db.createObjectStore('scoreTable', {
+              keyPath: 'id',
+            });
+          }
+        };
+      }
+
+      init(); */
 
       new DataBase().init(player);
       new Header().addUserHeader();
@@ -70,7 +104,6 @@ window.onload = () => {
       new DataBase().changeScore();
     }); */
   });
-
   document.querySelector('.about-game-head')?.addEventListener('click', () => {
     new Instruction().startMain();
   });

@@ -26,7 +26,7 @@ export class DataBase extends BaseComponent {
 
   showTable = ():void => {
     let db:IDBDatabase;
-    const crDb = indexedDB.open('maloiMASLACH', 1);
+    const crDb = indexedDB.open('maloiMASLACH', 2);
     crDb.onsuccess = ():void => {
       db = crDb.result;
       let tx = db.transaction('scoreTable', 'readwrite');
@@ -38,28 +38,28 @@ export class DataBase extends BaseComponent {
         getReq.onsuccess = () => {
           if (list) {
             list.innerHTML = getReq.result.map((player) => `
-            <li data-key="${player.id}">
-             <img class="head-avatar" src="https://sun9-46.userapi.com/impg/oL-wKdkN4BZ6HPaMtOT-eMBrTAlm_M314zlG2w/JA5b8BbGK-w.jpg?size=8x14&quality=96&sign=782155d8ab1347b91208a14aa78e2c80&type=album">
-             <div class="man-info">
-               <div class="name-and-surname">
-                 <p class="name">${player.firstName}</p>
-                 <p class="surname">${player.lastName}</p>
+              <li data-key="${player.id}">
+               <img class="head-avatar" src="https://sun9-46.userapi.com/impg/oL-wKdkN4BZ6HPaMtOT-eMBrTAlm_M314zlG2w/JA5b8BbGK-w.jpg?size=8x14&quality=96&sign=782155d8ab1347b91208a14aa78e2c80&type=album">
+               <div class="man-info">
+                 <div class="name-and-surname">
+                   <p class="name">${player.firstName}</p>
+                   <p class="surname">${player.lastName}</p>
+                 </div>
+                 <p class="email">${player.eMail}</p>
                </div>
-               <p class="email">${player.eMail}</p>
-             </div>
-             <p class="player-score">Score:${player.score}</p>
-            </li>
-          `).join('\n');
+               <p class="player-score">Score:${player.score}</p>
+              </li>
+            `).join('\n');
           }
         };
       };
     };
   };
 
-  init = (player: { [key: string]: unknown }):void => {
+  init = (player: { [key: string]: string }):void => {
     let db:IDBDatabase;
     let dbObgect = null;
-    const crDb = indexedDB.open('maloiMASLACH', 1);
+    const crDb = indexedDB.open('maloiMASLACH');
     function buildlist():void {
       const list = document.querySelector('.wlist');
       const tx = db.transaction('scoreTable', 'readonly');
