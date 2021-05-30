@@ -144,8 +144,13 @@ export class DataBase extends BaseComponent {
       const getReq = store.getAll();
       getReq.onsuccess = () => {
         const del = store.delete(getReq.result[getReq.result.length - 1].id);
-        player.score = `${Math.floor(3000 / (time / 1000))}`;
-        const request = store.add(player);
+        if (time <= 0) {
+          player.score = '0';
+          const request = store.add(player);
+        } else {
+          player.score = `${Math.floor(3000 / (time / 1000))}`;
+          const request = store.add(player);
+        }
       };
     };
   };

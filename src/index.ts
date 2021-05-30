@@ -60,8 +60,10 @@ function workSpace() {
         const firstName:string = (<HTMLInputElement>document.getElementById('firstName')).value;
         const lastName:string = (<HTMLInputElement>document.getElementById('lastName')).value;
         const eMail:string = (<HTMLInputElement>document.getElementById('eMail')).value;
-        const photo:string = (<HTMLImageElement>document.getElementById('registration-avatar')).src;
-
+        let photo:string = (<HTMLImageElement>document.getElementById('registration-avatar')).src;
+        if (photo.slice(0, 4) !== 'data') {
+          photo = 'https://sun9-46.userapi.com/impg/oL-wKdkN4BZ6HPaMtOT-eMBrTAlm_M314zlG2w/JA5b8BbGK-w.jpg?size=8x14&quality=96&sign=782155d8ab1347b91208a14aa78e2c80&type=album';
+        }
         const score = '0';
 
         const player = {
