@@ -32,14 +32,12 @@ export class CardsField extends BaseComponent {
         k = 0;
       } else {
         k++;
-        console.log(k);
         if (k === flipChekCon.length) {
           return k;
         }
       }
       return k;
     });
-    console.log(k);
     return k;
   };
 }

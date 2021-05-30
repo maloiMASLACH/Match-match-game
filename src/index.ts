@@ -25,12 +25,7 @@ function resultsWin() {
   new DataBase().showTable();
   workSpace();
 }
-function resultsAfterGameCompleate() {
-  new Header().createHeader();
-  new DataBase().createScorePage();
-  new DataBase().showTable();
-  workSpace();
-}
+
 function workSpace() {
   const appElement = document.querySelector('main');
   if (!appElement) throw Error('App root element not found');
@@ -92,9 +87,8 @@ function workSpace() {
                 new DataBase().showCongrat();
                 document.querySelector('.congrat-ok')?.addEventListener('click', () => {
                   new DataBase().closeCongrat();
-                  resultsAfterGameCompleate();
+                  resultsWin();
                 });
-                resultsAfterGameCompleate();
               }
             });
 
@@ -131,7 +125,7 @@ function workSpace() {
                   new DataBase().showCongrat();
                   document.querySelector('.congrat-ok')?.addEventListener('click', () => {
                     new DataBase().closeCongrat();
-                    resultsAfterGameCompleate();
+                    resultsWin();
                   });
                 }
               });
