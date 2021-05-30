@@ -80,6 +80,7 @@ export class DataBase extends BaseComponent {
       }
     };
   };
+
   showTable = ():void => {
     let db:IDBDatabase;
     const crDb = indexedDB.open('maloiMASLACH', 7);
@@ -112,32 +113,40 @@ export class DataBase extends BaseComponent {
     };
   };
 
-
-
-  changeScore = ():void => {
-    const spis = document.querySelectorAll('li');
-    console.log(document.querySelector('li')?.querySelector('.player-score'));
-    const last = spis[spis.length - 1].getAttribute('data-key');
-    if (last) {
-      let db:IDBDatabase;
-      const crDb = indexedDB.open('maloiMASLACH', 1);
-      crDb.onsuccess = function () {
-        db = crDb.result;
-        const tx = db.transaction('scoreTable', 'readwrite');
-        tx.oncomplete = () => {
-          const list = spis[spis.length - 1].querySelector('.player-score');
-          const txn = db.transaction('scoreTable', 'readonly');
-          const store = txn.objectStore('scoreTable');
-          const getReq = store.getAll();
-          getReq.onsuccess = () => {
-            if (list) {
-              list.innerHTML = `
-                 <p class="player-score">Score:100</p>
-              `;
-            }
-          };
-        };
-      };
+  showCongrat = ():void => {
+    const win = document.querySelector('main');
+    if (win) {
+      win.innerHTML += `
+      <div class="congrat-lay" id="congrat-lay">
+        <div class="congrat-content">
+        <h3>Congratulations</h3>
+        <button class="congrat-ok" type="button">OK</button>
+        </div>
+    </div>
+      `;
     }
+  };
+
+  closeCongrat = ():void => {
+    const reg = document.querySelector('.congrat-lay');
+    if (reg) {
+      reg.remove();
+    }
+  };
+
+  changeScore = (player: { [key: string]: string }, time:number):void => {
+    let db:IDBDatabase;
+    const crDb = indexedDB.open('maloiMASLACH', 7);
+    crDb.onsuccess = function ():void {
+      db = crDb.result;
+      const tx = db.transaction('bestScoreTable', 'readwrite');
+      const store = tx.objectStore('bestScoreTable');
+      const getReq = store.getAll();
+      getReq.onsuccess = () => {
+        const del = store.delete(getReq.result[getReq.result.length - 1].id);
+        player.score = `${Math.floor(3000 / (time / 1000))}`;
+        const request = store.add(player);
+      };
+    };
   };
 }

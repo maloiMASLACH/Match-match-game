@@ -7,10 +7,11 @@ import { DataBase } from './components/data-base/data-base';
 import { uid } from './keygen';
 import { GameSettings } from './components/game-settings/game-settngs';
 import { Timer } from './components/timer/timer';
+import { CardsField } from './components/card-field/cards-field';
 
 function settingInit() {
   new Header().createHeader();
-  new Instruction().startMain();
+  new GameSettings().settingsMenu();
   workSpace();
 }
 function startAPP() {
@@ -19,6 +20,12 @@ function startAPP() {
   workSpace();
 }
 function resultsWin() {
+  new Header().createHeader();
+  new DataBase().createScorePage();
+  new DataBase().showTable();
+  workSpace();
+}
+function resultsAfterGameCompleate() {
   new Header().createHeader();
   new DataBase().createScorePage();
   new DataBase().showTable();
@@ -69,62 +76,76 @@ function workSpace() {
         new Header().addUserHeader(photo);
 
         document.querySelector('.head-start-but')?.addEventListener('click', () => {
-
           if (document.querySelector('.game-settings') == null) {
             new Instruction().removeInstr();
             new App(appElement).newGame();
             new Header().startedGame(photo);
             const startTime = new Timer().timer();
 
-            document.querySelector(".card-container")?.addEventListener('click',()=>{
-              console.log("qswdqw");
-              let flipChekCon=document.querySelectorAll(".card-container");
-          /*    flipChekCon.forEach(div => {
-                if(!div.classList.contains('flipped')){
-                  console.log("false")
-                  return
-                }
-              });*/
-            })
-
+            document.querySelector('.card-field')?.addEventListener('click', () => {
+              const flipChacker = new CardsField().flippedCheck();
+              if (flipChacker === document.querySelectorAll('.card-container').length) {
+                const endTime = new Timer().endCounter() - startTime - 4500;
+                new DataBase().changeScore(player, endTime);
+                new DataBase().showCongrat();
+                document.querySelector('.congrat-ok')?.addEventListener('click', () => {
+                  new DataBase().closeCongrat();
+                  resultsAfterGameCompleate();
+                });
+                resultsAfterGameCompleate();
+              }
+            });
 
             document.querySelector('.head-stop-but')?.addEventListener('click', () => {
-              const endTime = new Timer().endCounter();
-              alert(endTime - startTime - 4500);
-              console.log(endTime - startTime - 4500);
               startAPP();
             });
+
             document.querySelector('.about-game-head')?.addEventListener('click', () => {
               startAPP();
             });
+
             document.querySelector('.best-score-head')?.addEventListener('click', () => {
               resultsWin();
             });
+
             document.querySelector('.game-setting-head')?.addEventListener('click', () => {
               settingInit();
             });
           } else {
             const cardType = (<HTMLInputElement>document.getElementById('first-set'))?.value;
             const difficulty = (<HTMLInputElement>document.getElementById('thecond-set'))?.value;
+
             if (cardType && difficulty) {
               new Instruction().removeInstr();
               new App(appElement).newGameWithSet(cardType, difficulty);
               new Header().startedGame(photo);
               const startTime = new Timer().timer();
 
+              document.querySelector('.card-field')?.addEventListener('click', () => {
+                const flipChacker = new CardsField().flippedCheck();
+                if (flipChacker === document.querySelectorAll('.card-container').length) {
+                  const endTime = new Timer().endCounter() - startTime - 4500;
+                  new DataBase().changeScore(player, endTime);
+                  new DataBase().showCongrat();
+                  document.querySelector('.congrat-ok')?.addEventListener('click', () => {
+                    new DataBase().closeCongrat();
+                    resultsAfterGameCompleate();
+                  });
+                }
+              });
+
               document.querySelector('.head-stop-but')?.addEventListener('click', () => {
-                new Instruction().startMain();
-                const endTime = new Timer().endCounter();
-                alert(endTime - startTime - 4500);
-                console.log(endTime - startTime - 4500);
                 startAPP();
               });
+
               document.querySelector('.about-game-head')?.addEventListener('click', () => {
                 startAPP();
               });
+
               document.querySelector('.best-score-head')?.addEventListener('click', () => {
                 resultsWin();
               });
+
               document.querySelector('.game-setting-head')?.addEventListener('click', () => {
                 settingInit();
               });
@@ -136,33 +157,27 @@ function workSpace() {
       }
     });
   });
+
   document.querySelector('.best-score-head')?.addEventListener('click', (e) => {
     new DataBase().createScorePage();
     new DataBase().showTable();
-
-  /* document.querySelector('main')?.addEventListener('click', () => {
-    const spis = document.querySelectorAll('li');
-    console.log(spis[spis.length - 1].getAttribute('data-key'));
-    new DataBase().changeScore();
-  }); */
   });
+
   document.querySelector('.about-game-head')?.addEventListener('click', () => {
     new Instruction().startMain();
   });
+
   document.querySelector('.game-setting-head')?.addEventListener('click', () => {
     new GameSettings().settingsMenu();
-    /* document.querySelector('.head-start-but')?.addEventListener('click', () => {
-    const cardType = (<HTMLInputElement>document.getElementById('first-set'))?.value;
-    const difficulty = (<HTMLInputElement>document.getElementById('thecond-set'))?.value;
-    if (cardType && difficulty) {
-      new Instruction().removeInstr();
-      new App(appElement).newGameWithSet(cardType, difficulty);
-      new Timer().timer();
-    }
-  }); */
   });
 }
 
 window.onload = () => {
   startAPP();
 };
+
+/* document.querySelector('main')?.addEventListener('click', () => {
+    const spis = document.querySelectorAll('li');
+    console.log(spis[spis.length - 1].getAttribute('data-key'));
+    new DataBase().changeScore();
+  }); */

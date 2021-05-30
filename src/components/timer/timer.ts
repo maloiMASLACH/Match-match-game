@@ -25,9 +25,7 @@ export class Timer extends BaseComponent {
           ctx.fillRect(0, 0, canvas.width, canvas.height);
           ctx.fillStyle = 'indigo';
           ctx.fillText(`${date.getUTCMinutes()}:${date.getUTCSeconds()}`, 120, 85);
-          console.log(timerValue);
         }, 1000);
-        console.log(timerValue);
       }, 4500);
     }
     return (start);

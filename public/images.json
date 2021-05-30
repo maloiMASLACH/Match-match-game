@@ -110,6 +110,26 @@
       "onigiri.png",
       "paella.png"
     ]
+  },
+  {
+    "category": "/food-MEDIUM",
+    "images":[
+      "banana-bread.png",
+      "barbecue.png",
+      "borscht.png",
+      "burger-sandwich.png",
+      "chocolate-chip.png",
+      "hot-dog.png"
+    ]
+  },
+  {
+    "category": "/food-EASY",
+    "images":[
+      "banana-bread.png",
+      "barbecue.png",
+      "borscht.png",
+      "burger-sandwich.png"
+    ]
   }
 
 ]

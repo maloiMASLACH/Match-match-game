@@ -23,4 +23,23 @@ export class CardsField extends BaseComponent {
       this.cards.forEach((card) => card.flipToBack());
     }, SHOW_TIME * 1000);
   }
+
+  flippedCheck = ():number => {
+    let k = 0;
+    const flipChekCon = document.querySelectorAll('.card-container');
+    flipChekCon.forEach((div) => {
+      if (div.classList.contains('flipped')) {
+        k = 0;
+      } else {
+        k++;
+        console.log(k);
+        if (k === flipChekCon.length) {
+          return k;
+        }
+      }
+      return k;
+    });
+    console.log(k);
+    return k;
+  };
 }
