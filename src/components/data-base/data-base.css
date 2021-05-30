@@ -1,0 +1,81 @@
+.best-score{
+  background-color: rgb(236, 209, 255);
+  margin-top:4rem;
+  width: 50%;
+  height: 50%;
+  margin-left: 0%;
+  border: solid 5px rgb(148, 94, 187) ;
+  border-radius: 3%;
+  pointer-events: none;
+}
+
+ul.wlist{
+  margin-left: 20%;
+  display: inline;
+  list-style: none;
+}
+.wlist li{
+  margin-bottom: 1rem;
+  display:flex ;
+  align-items: center;
+}
+.man-info{
+  width: 40%;
+  margin-left: 5%;
+  display: inline;
+}
+.name-and-surname{
+
+  display: flex;
+  color: rgb(115, 81, 138);
+
+}
+.surname{
+  margin-left: 3%;
+}
+.email{
+  color: rgb(155, 148, 161);
+  font-size: smaller;
+}
+.player-score{
+  position: absolute;
+  right: 30%;
+  color: indigo;
+
+}
+
+.congrat-lay{
+  position: fixed;
+  top:0%;
+  left:0%;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+.congrat-content{
+  opacity: 1;
+  margin:10% 0 0 30%;
+  width:30%;
+  height: 30%;
+  background-color: rgb(255, 255, 255);
+  justify-content: center;
+  align-items: center;
+  border-radius: 5%;
+}
+.congrat-content h3{
+  margin:0% 0 10% 30%;
+  padding-top: 5%;
+  color: indigo;
+}
+.congrat-ok{
+  margin-left: 15%;
+  width: 70%;
+  height: 50%;
+  background-color: rgb(199, 157, 229);
+  font-size: 3rem;
+  color: indigo;
+
+}
+
+

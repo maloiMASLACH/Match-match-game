@@ -1,0 +1,749 @@
+body{
+  margin:0;
+  min-height: 100vh;
+  font-size: 20px;
+  color: #ccc;
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(223, 211, 223);
+  justify-content: center;
+  align-items: center;
+}
+
+
+hr{
+  display: block;
+  width: 100%;
+  height: 1px;
+  border:0;
+  background-color: #e4fdf9;
+  padding: 10px 0;
+}
+
+p{
+  padding: 0;
+  margin: 0;
+}
+
+:active, :hover, :focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+*,
+*:before,
+*:after
+{
+  box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6{
+  margin: 0;
+}
+
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 64px;
+  background-color: rgb(110, 80, 122);
+}
+header .icons{
+  margin-left: 5%;
+  display:  inline;
+  justify-content: center;
+  align-items: center;
+}
+header .icons div{
+  padding-left: 5px;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  width: 80px;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+}
+header .icons div:last-child{
+background-color: antiquewhite;
+color: indigo;
+}
+.head-menu{
+  justify-content: center;
+  align-items:center;
+  display: flex;
+  margin-left: 5%;
+  color: white;
+}
+.head-menu div{
+  cursor: pointer;
+  height: 64px;
+margin-right: 0;
+width: 150px;
+}
+.head-menu div:hover{
+  background-color: rgb(182, 143, 197) ;
+}
+.head-menu div.active{
+ background-color: rgb(163, 102, 207);
+}
+.head-menu div img{
+  margin-top: 5px;
+  margin-left: 4.2%;
+ position: absolute;
+ border-radius: 50%;
+}
+.head-menu div img.img-inside-img{
+  margin-left: 4.4%;
+  margin-top: 7px;
+}
+.head-menu div p{
+  margin-left: 10%;
+  margin-top: 30px
+}
+.head-register-but{
+  margin-left: 30%;
+  width: 207px;
+  height: 36px;
+  border-radius: 5px;
+  background-color: rgb(214, 175, 241);
+  color: white;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.head-start-but{
+  margin-left: 30%;
+  width: 147px;
+  height: 36px;
+  border-radius: 5px;
+  background-color: rgb(214, 175, 241);
+  color: white;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.head-avatar{
+  margin-left: 2%;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.register-lay{
+  position: fixed;
+  top:0%;
+  left:0%;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+.register-content{
+  opacity: 1;
+  margin:10% 0 0 30%;
+  width:639px;
+  height: 460px;
+  background-color: rgb(255, 255, 255);
+  justify-content: center;
+  align-items: center;
+  border-radius: 5%;
+}
+.register-content h3{
+  display: block;
+  background-color: rgb(198, 160, 236);
+  padding:10px 0 10px 10px;
+  color: black;
+  font-size: 20px;
+}
+.register-form{
+  display: flex;
+}
+.register-form div{
+  width: 350px;
+}
+.form-left{
+  margin: 20px 0 0 20px;
+}
+.form-left input{
+  margin-top: 16px;
+  width: 328px;
+  height: 72px;
+  background-color: rgb(198, 160, 236);
+  border:1px solid indigo;
+  color: black;
+  font-size: 20px;
+  font-weight: bolder;
+  padding-left: 60px;
+  transition: 0.2s;
+}
+.form-left input:hover{
+  background-color: rgb(222, 193, 250);
+}
+.form-right{
+  margin:35px 0 0 35px;
+
+}
+.registration-avatar{
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 2;
+}
+.avatar-on-reg{
+width: 200px;
+height: 200px;
+position: absolute;
+border-radius: 50%;
+}
+button.add-user{
+  pointer-events: none;
+  opacity: 0;
+}
+.register-form-butt{
+margin:70px 0 0 370px;
+display: flex;
+width: 250px;
+justify-content: space-between;
+}
+
+.register-form-butt label{
+  padding: 10px 0 0 10px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10%;
+  height: 36px;
+  width: 108px;
+  font-size: 16px;
+  font-weight: bolder;
+  background-color: rgb(198, 160, 236);
+  color:black;
+  transition: 0.3s;
+}
+.register-form-butt label:hover{
+  transform: scale(1.05);
+}
+.register-form-butt button{
+  font-size: 16px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10%;
+  height: 36px;
+  width: 108px;
+  font-weight: bolder;
+  background-color: rgb(202, 202, 202);
+  color:rgb(156, 156, 156);
+  transition: 0.3s;
+}
+.register-form-butt button:hover{
+  transform: scale(1.05);
+}
+
+footer {
+  color: rgb(231, 131, 9);
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-container {
+  flex: 0 0 19%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  perspective: 25rem;
+  cursor: pointer;
+  margin: 1%;
+}
+
+.card {
+  position: relative;
+  width: 7rem;
+  height: 7rem;
+  transform-style: preserve-3d;
+  transition: all .3s;
+  transform-origin: right;
+  box-shadow: 0 0 .25rem black;
+  border-radius: .5rem;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: .5rem;
+  background-position: center;
+  background-size: cover;
+}
+
+.card-back {
+  background-color: gray;
+  background-image: url(assets/4469d655e15c21a64106.png);
+  transform: rotateY(180deg);
+}
+
+.card-front {
+  background-color:rgb(239, 182, 253);
+  width: 100%;
+  height: 100%;
+}
+
+.card-container:hover > .card {
+  /*transform: translateZ(2rem);*/
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .5);
+}
+
+.flipped > .card {
+  transform: rotateY(180deg) translateX(-100%);
+  transform-origin: left;
+}
+
+
+.card-field {
+  margin-top:12rem;
+  min-width: 40ch;
+  max-width: 80ch;
+  min-height: 40vh;
+  max-height: 80vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+header{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 64px;
+  background-color: rgb(110, 80, 122);
+}
+header .icons{
+  margin-left: 5%;
+  display:  inline;
+  justify-content: center;
+  align-items: center;
+}
+header .icons div{
+  padding-left: 5px;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  width: 80px;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+}
+header .icons div:last-child{
+background-color: antiquewhite;
+color: indigo;
+}
+.head-menu{
+  justify-content: center;
+  align-items:center;
+  display: flex;
+  margin-left: 5%;
+  color: white;
+}
+.head-menu div{
+  cursor: pointer;
+  height: 64px;
+margin-right: 0;
+width: 150px;
+}
+.head-menu div:hover{
+  background-color: rgb(182, 143, 197) ;
+}
+.head-menu div.active{
+ background-color: rgb(163, 102, 207);
+}
+.head-menu div img{
+  margin-top: 5px;
+  margin-left: 4.2%;
+ position: absolute;
+ border-radius: 50%;
+}
+.head-menu div img.img-inside-img{
+  margin-left: 4.4%;
+  margin-top: 7px;
+}
+.head-menu div p{
+  margin-left: 10%;
+  margin-top: 30px
+}
+.right-head{
+  width: 300px;
+  margin-left: 30%;
+  display: flex;
+}
+.head-register-but{
+  width: 207px;
+  height: 36px;
+  border-radius: 5px;
+  background-color: rgb(214, 175, 241);
+  color: white;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.head-start-but{
+  width: 147px;
+  height: 36px;
+  border-radius: 5px;
+  background-color: rgb(214, 175, 241);
+  color: white;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.head-stop-but{
+  width: 147px;
+  height: 36px;
+  border-radius: 5px;
+  background-color: rgb(214, 175, 241);
+  color: white;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.head-avatar{
+  margin-left: 2%;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+.instructions{
+  display: flex;
+  margin-top:2rem;
+  width: 50%;
+  height: 50%;
+  color: rgb(0, 0, 0);
+}
+.main-info-left{
+  display: inline;
+  justify-content: left;
+}
+.main-info-left h4{
+  margin-bottom:20px;
+}
+.main-info-left div{
+  display: flex;
+  width: 360px;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 16px;
+  box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24);
+}
+.main-info-left .how-point{
+  margin: 10px 0 0 10px;
+  height: 40px;
+  width: 40px;
+  background-color: rgb(103, 86, 116);
+  border-radius: 50%;
+  font-size: 24px;
+  padding-left: 12px;
+  padding-top: 5px;
+}
+ .how-register{
+ height: 230px;
+}
+.how-config{
+  height: 132px;
+}
+.how-start{
+  height: 240px;
+}
+.how-text{
+  font-size: 14px;
+  margin: 20px 0 0 10px;
+  width: 272px;
+}
+.main-info-right{
+  display: inline;
+}
+.main-info-right .register-instr{
+  margin: 44px 0 0 25%;
+  width: 302px;
+  height: 218px;
+}
+.main-info-right .game-set-instr{
+  margin: 16px 0 0 86%;
+  font-size: 13px;
+  font-weight: bolder;
+  height: 64px;
+  width: 100px;
+  background-color: rgb(110, 80, 122);
+}
+.main-info-right .game-set-instr:hover{
+  background-color: rgb(182, 143, 197) ;
+}
+.main-info-right .game-set-instr img{
+  border-radius: 50%;
+  position: absolute;
+  margin: 10px 0 0 40px;
+}
+.main-info-right .game-set-instr p{
+  padding-top: 40px;
+  padding-left: 5px;
+}
+.main-info-right .game-set-instr img.img-inside-img{
+  margin: 11px 0 0 42px;
+}
+.main-info-right .example{
+  width: 330px;
+  height: 240px;
+  margin: 95px 0 0 17%
+}
+
+.register-lay{
+  position: fixed;
+  top:0%;
+  left:0%;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+.register-content{
+  opacity: 1;
+  margin:10% 0 0 30%;
+  width:639px;
+  height: 460px;
+  background-color: rgb(255, 255, 255);
+  justify-content: center;
+  align-items: center;
+  border-radius: 5%;
+}
+.register-content h3{
+  display: block;
+  background-color: rgb(198, 160, 236);
+  padding:10px 0 10px 10px;
+  color: black;
+  font-size: 20px;
+}
+.register-form{
+  display: flex;
+}
+.register-form div{
+  width: 350px;
+}
+.form-left{
+  margin: 20px 0 0 20px;
+}
+.form-left input{
+  margin-top: 16px;
+  width: 328px;
+  height: 72px;
+  background-color: rgb(198, 160, 236);
+  border:1px solid indigo;
+  color: black;
+  font-size: 20px;
+  font-weight: bolder;
+  padding-left: 60px;
+  transition: 0.2s;
+}
+.form-left input:hover{
+  background-color: rgb(222, 193, 250);
+}
+.form-left input.invalid{
+  border:1px solid red;
+}
+.form-right{
+  margin:35px 0 0 35px;
+}
+.registration-avatar{
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 2;
+}
+.avatar-on-reg{
+width: 200px;
+height: 200px;
+position: absolute;
+border-radius: 50%;
+}
+button.add-user{
+  pointer-events: none;
+  opacity: 0;
+}
+.register-form-butt{
+margin:70px 0 0 370px;
+display: flex;
+width: 250px;
+justify-content: space-between;
+}
+
+.register-form-butt label{
+  padding: 10px 0 0 10px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10%;
+  height: 36px;
+  width: 108px;
+  font-size: 16px;
+  font-weight: bolder;
+  background-color: rgb(198, 160, 236);
+  color:black;
+  transition: 0.3s;
+}
+.register-form-butt label:hover{
+  transform: scale(1.05);
+}
+.register-form-butt button{
+  font-size: 16px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10%;
+  height: 36px;
+  width: 108px;
+  font-weight: bolder;
+  background-color: rgb(202, 202, 202);
+  color:rgb(156, 156, 156);
+  transition: 0.3s;
+}
+.register-form-butt button:hover{
+  transform: scale(1.05);
+}
+
+
+.best-score{
+  background-color: rgb(236, 209, 255);
+  margin-top:4rem;
+  width: 50%;
+  height: 50%;
+  margin-left: 0%;
+  border: solid 5px rgb(148, 94, 187) ;
+  border-radius: 3%;
+  pointer-events: none;
+}
+
+ul.wlist{
+  margin-left: 20%;
+  display: inline;
+  list-style: none;
+}
+.wlist li{
+  margin-bottom: 1rem;
+  display:flex ;
+  align-items: center;
+}
+.man-info{
+  width: 40%;
+  margin-left: 5%;
+  display: inline;
+}
+.name-and-surname{
+
+  display: flex;
+  color: rgb(115, 81, 138);
+
+}
+.surname{
+  margin-left: 3%;
+}
+.email{
+  color: rgb(155, 148, 161);
+  font-size: smaller;
+}
+.player-score{
+  position: absolute;
+  right: 30%;
+  color: indigo;
+
+}
+
+.congrat-lay{
+  position: fixed;
+  top:0%;
+  left:0%;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+.congrat-content{
+  opacity: 1;
+  margin:10% 0 0 30%;
+  width:30%;
+  height: 30%;
+  background-color: rgb(255, 255, 255);
+  justify-content: center;
+  align-items: center;
+  border-radius: 5%;
+}
+.congrat-content h3{
+  margin:0% 0 10% 30%;
+  padding-top: 5%;
+  color: indigo;
+}
+.congrat-ok{
+  margin-left: 15%;
+  width: 70%;
+  height: 50%;
+  background-color: rgb(199, 157, 229);
+  font-size: 3rem;
+  color: indigo;
+
+}
+
+
+
+.game-settings{
+  background-color: rgb(236, 209, 255);
+  margin-top:4rem;
+  width: 50%;
+  height: 50%;
+  margin-left: 0%;
+  border: solid 5px rgb(148, 94, 187) ;
+  border-radius: 5%;
+}
+.game-parammetr{
+  margin: 3rem;
+  border:none;
+  color: blueviolet;
+  font-size: xx-large;
+}
+.game-parammetr:hover{
+  border-right: 40px solid white;
+}
+.game-parammetr select{
+  width: 20rem;
+  height: 4rem;
+  background-color: violet;
+  border: none;
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+}
+.game-settings select option{
+  text-align: center;
+}
+
+.canvas-conteiner{
+  position: absolute;
+  top: 0;
+  margin-top: 6rem;
+}
+canvas{
+  position: absolute;
+  top: 0;
+  left: -9rem;
+  border: 2px solid rgb(241, 221, 255);
+  border-radius: 10px;
+  z-index: 2;
+}
+.canvas-conteiner p{
+  top:20px;
+  left: -2rem;
+position: absolute;
+color: indigo;
+font-size: 46px;
+
+}
+

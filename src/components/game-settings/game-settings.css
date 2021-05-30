@@ -1,0 +1,29 @@
+.game-settings{
+  background-color: rgb(236, 209, 255);
+  margin-top:4rem;
+  width: 50%;
+  height: 50%;
+  margin-left: 0%;
+  border: solid 5px rgb(148, 94, 187) ;
+  border-radius: 5%;
+}
+.game-parammetr{
+  margin: 3rem;
+  border:none;
+  color: blueviolet;
+  font-size: xx-large;
+}
+.game-parammetr:hover{
+  border-right: 40px solid white;
+}
+.game-parammetr select{
+  width: 20rem;
+  height: 4rem;
+  background-color: violet;
+  border: none;
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+}
+.game-settings select option{
+  text-align: center;
+}
