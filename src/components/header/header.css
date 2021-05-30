@@ -81,6 +81,15 @@ width: 150px;
   font-size: 14px;
   text-transform: uppercase;
 }
+.head-stop-but{
+  width: 147px;
+  height: 36px;
+  border-radius: 5px;
+  background-color: rgb(214, 175, 241);
+  color: white;
+  font-size: 14px;
+  text-transform: uppercase;
+}
 .head-avatar{
   margin-left: 2%;
   border-radius: 50%;

@@ -24,55 +24,22 @@ export class DataBase extends BaseComponent {
     this.showTable();
   };
 
-  showTable = ():void => {
-    let db:IDBDatabase;
-    const crDb = indexedDB.open('maloiMASLACH', 2);
-    crDb.onsuccess = ():void => {
-      db = crDb.result;
-      let tx = db.transaction('scoreTable', 'readwrite');
-      tx.oncomplete = () => {
-        const list = document.querySelector('.wlist');
-        tx = db.transaction('scoreTable', 'readonly');
-        const store = tx.objectStore('scoreTable');
-        const getReq = store.getAll();
-        getReq.onsuccess = () => {
-          if (list) {
-            list.innerHTML = getReq.result.map((player) => `
-              <li data-key="${player.id}">
-               <img class="head-avatar" src="https://sun9-46.userapi.com/impg/oL-wKdkN4BZ6HPaMtOT-eMBrTAlm_M314zlG2w/JA5b8BbGK-w.jpg?size=8x14&quality=96&sign=782155d8ab1347b91208a14aa78e2c80&type=album">
-               <div class="man-info">
-                 <div class="name-and-surname">
-                   <p class="name">${player.firstName}</p>
-                   <p class="surname">${player.lastName}</p>
-                 </div>
-                 <p class="email">${player.eMail}</p>
-               </div>
-               <p class="player-score">Score:${player.score}</p>
-              </li>
-            `).join('\n');
-          }
-        };
-      };
-    };
-  };
-
   init = (player: { [key: string]: string }):void => {
     let db:IDBDatabase;
     let dbObgect = null;
-    const crDb = indexedDB.open('maloiMASLACH');
+    const crDb = indexedDB.open('maloiMASLACH', 7);
     function buildlist():void {
       const list = document.querySelector('.wlist');
-      const tx = db.transaction('scoreTable', 'readonly');
-      if (list) list.innerHTML = '<li>Loading...</li>';
+      const tx = db.transaction('bestScoreTable', 'readonly');
       tx.oncomplete = () => {
       };
-      const store = tx.objectStore('scoreTable');
+      const store = tx.objectStore('bestScoreTable');
       const getReq = store.getAll();
       getReq.onsuccess = () => {
         if (list) {
           list.innerHTML = getReq.result.map((qq) => `
             <li>
-             <img class="head-avatar" src="https://sun9-46.userapi.com/impg/oL-wKdkN4BZ6HPaMtOT-eMBrTAlm_M314zlG2w/JA5b8BbGK-w.jpg?size=8x14&quality=96&sign=782155d8ab1347b91208a14aa78e2c80&type=album">
+             <img class="head-avatar" src="${qq.photo}">
              <div class="man-info">
                <div class="name-and-surname">
                  <p class="name">${qq.firstName}</p>
@@ -94,11 +61,11 @@ export class DataBase extends BaseComponent {
     };
     crDb.onsuccess = function ():void {
       db = crDb.result;
-      const tx = db.transaction('scoreTable', 'readwrite');
+      const tx = db.transaction('bestScoreTable', 'readwrite');
       tx.oncomplete = () => {
         buildlist();
       };
-      const store = tx.objectStore('scoreTable');
+      const store = tx.objectStore('bestScoreTable');
       const request = store.add(player);
     };
     crDb.onupgradeneeded = (ev) => {
@@ -106,13 +73,46 @@ export class DataBase extends BaseComponent {
       const oVersion = ev.oldVersion;
       const nVersion = ev.newVersion;
       console.log(`updated from ${oVersion} to ${nVersion} version`);
-      if (!db.objectStoreNames.contains('scoreTable')) {
-        dbObgect = db.createObjectStore('scoreTable', {
+      if (!db.objectStoreNames.contains('bestScoreTable')) {
+        dbObgect = db.createObjectStore('bestScoreTable', {
           keyPath: 'id',
         });
       }
     };
   };
+  showTable = ():void => {
+    let db:IDBDatabase;
+    const crDb = indexedDB.open('maloiMASLACH', 7);
+    crDb.onsuccess = ():void => {
+      db = crDb.result;
+      let tx = db.transaction('bestScoreTable', 'readwrite');
+      tx.oncomplete = () => {
+        const list = document.querySelector('.wlist');
+        tx = db.transaction('bestScoreTable', 'readonly');
+        const store = tx.objectStore('bestScoreTable');
+        const getReq = store.getAll();
+        getReq.onsuccess = () => {
+          if (list) {
+            list.innerHTML = getReq.result.map((player) => `
+              <li data-key="${player.id}">
+               <img class="head-avatar" src="${player.photo}">
+               <div class="man-info">
+                 <div class="name-and-surname">
+                   <p class="name">${player.firstName}</p>
+                   <p class="surname">${player.lastName}</p>
+                 </div>
+                 <p class="email">${player.eMail}</p>
+               </div>
+               <p class="player-score">Score:${player.score}</p>
+              </li>
+            `).join('\n');
+          }
+        };
+      };
+    };
+  };
+
+
 
   changeScore = ():void => {
     const spis = document.querySelectorAll('li');

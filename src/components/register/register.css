@@ -47,9 +47,11 @@
 .form-left input:hover{
   background-color: rgb(222, 193, 250);
 }
+.form-left input.invalid{
+  border:1px solid red;
+}
 .form-right{
   margin:35px 0 0 35px;
-
 }
 .registration-avatar{
   position: absolute;
@@ -107,3 +109,4 @@ justify-content: space-between;
 .register-form-butt button:hover{
   transform: scale(1.05);
 }
+

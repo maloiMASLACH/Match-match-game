@@ -50,7 +50,13 @@ export class Header extends BaseComponent {
     }
   };
 
-  addUserHeader = ():void => {
+  addUserHeader = (photo:string):void => {
+    let photoSrc:string;
+    if (photo.slice(0, 4) !== 'data') {
+      photoSrc = 'https://sun9-46.userapi.com/impg/oL-wKdkN4BZ6HPaMtOT-eMBrTAlm_M314zlG2w/JA5b8BbGK-w.jpg?size=8x14&quality=96&sign=782155d8ab1347b91208a14aa78e2c80&type=album';
+    } else {
+      photoSrc = photo;
+    }
     const head = document.querySelector('.right-head');
     if (head) {
       head.innerHTML = `
@@ -59,7 +65,28 @@ export class Header extends BaseComponent {
         start game
       </p>
     </button>
-    <img class="head-avatar" src="https://sun9-46.userapi.com/impg/oL-wKdkN4BZ6HPaMtOT-eMBrTAlm_M314zlG2w/JA5b8BbGK-w.jpg?size=8x14&quality=96&sign=782155d8ab1347b91208a14aa78e2c80&type=album">
+    <img class="head-avatar" src="${photoSrc}">
+
+      `;
+    }
+  };
+
+  startedGame = (photo:string):void => {
+    let photoSrc:string;
+    if (photo.slice(0, 4) !== 'data') {
+      photoSrc = 'https://sun9-46.userapi.com/impg/oL-wKdkN4BZ6HPaMtOT-eMBrTAlm_M314zlG2w/JA5b8BbGK-w.jpg?size=8x14&quality=96&sign=782155d8ab1347b91208a14aa78e2c80&type=album';
+    } else {
+      photoSrc = photo;
+    }
+    const head = document.querySelector('.right-head');
+    if (head) {
+      head.innerHTML = `
+      <button class="head-stop-but">
+      <p>
+        stop game
+      </p>
+    </button>
+    <img class="head-avatar" src="${photoSrc}">
 
       `;
     }
